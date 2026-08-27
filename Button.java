@@ -15,14 +15,14 @@ public class Button extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public Button(World link){
-        makeButton();
-        this.link = link;
+        makeButton(); // creates the button design
+        this.link = link; // allows start button to be linked to the play menu
     }
     public void act()
     {
         // Add your action code here.
         if (Greenfoot.mouseClicked(this)){
-            Greenfoot.setWorld(this.link);
+            Greenfoot.setWorld(this.link); // allows user to click to enter program
         }
         
     }

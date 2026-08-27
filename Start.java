@@ -19,12 +19,12 @@ public class Start extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        main = new Main();
+        main = new Main(); //creates both main and play menus
         play = new Play();
         
-        main.createButtons(play);
+        main.createButtons(play); //adds the button to both play and menu
         play.createButtons(main);
         
-        Greenfoot.setWorld(main);
+        Greenfoot.setWorld(main); 
     }
 }

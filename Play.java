@@ -19,13 +19,13 @@ public class Play extends World
         super(400, 400, 1);
     }
     public void createButtons(World main) {
-        ExitButton exitButton = new ExitButton(main);
+        ExitButton exitButton = new ExitButton(main); // button to leave game menu
         addObject(exitButton, 200, 350);
-        ExitText exitText = new ExitText();
+        ExitText exitText = new ExitText(); // text for the exit button
         addObject(exitText, 200, 350);
-        TimedButton timedButton  = new TimedButton();
+        TimedButton timedButton  = new TimedButton(); // adds the main reaction time button
         addObject(timedButton , 200, 150);
-        ResetButton resetButton  = new ResetButton(timedButton);
+        ResetButton resetButton  = new ResetButton(timedButton); // adds a button to reset buttons
         addObject(resetButton , 200, 275);
         BestTime bestTime = new BestTime(timedButton); // text for best time
         addObject(bestTime, 350,28);

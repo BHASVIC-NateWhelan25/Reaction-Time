@@ -21,7 +21,7 @@ public class Main extends World
         
     }
 
-    public void createButtons(World play) {
+    public void createButtons(World play) { //Adds the text and buttons to the MainMenu World
         playButton = new Button(play); // button for start
         addObject(playButton, 300, 250);
         //Enter test = new Enter();

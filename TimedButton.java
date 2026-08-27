@@ -9,14 +9,14 @@ import java.util.ArrayList;
  */
 public class TimedButton extends Actor
 {
-    private int state = 0; // state: 0 = Not READY, 1= READY, 3=Done
-    private long time = 0;
+    private int state = 0; // state: 0= Not READY, 1= READY, 3= Done
+    private long time = 0;//         0= RED,       1= GREEN, 3= BLUE
     private long startTime;
     private long endTime;
     private int timer;
     private long average;
     private long best;
-    ArrayList<Long> times = new ArrayList<>();
+    ArrayList<Long> times = new ArrayList<>(); // array of times
     /**
      * Act - do whatever the TimedButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -28,15 +28,15 @@ public class TimedButton extends Actor
     public void act()
     {
         // Add your action code here.
-        if (state==1){
+        if (state==1){ // if in state 1 changes the button to green
             changeButton();
         }
-        if (Greenfoot.mouseClicked(this)&&state==1){
+        if (Greenfoot.mouseClicked(this)&&state==1){ // to allow user to click on green button
             state = 3;
             endTime = System.currentTimeMillis();
             finalButton();
         }
-        if (timer==0&&state==0){
+        if (timer==0&&state==0){ // turns button to state 1 if timer over
             state=1;
             startTime = System.currentTimeMillis();
         }
@@ -44,9 +44,9 @@ public class TimedButton extends Actor
         
     }
     public long timeDiff(){
-        return (endTime-startTime);
+        return (endTime-startTime); // calcs time from green button to blue button
     }
-    public void makeButton(){
+    public void makeButton(){ // creation of button
         GreenfootImage image = new  GreenfootImage(200, 100);
         image.setColor(Color.RED);
         image.fill();
@@ -58,7 +58,7 @@ public class TimedButton extends Actor
         
         setImage(image);
     }
-    public void defaultButton(){
+    public void defaultButton(){ // RED button, default state
         getImage().setColor(Color.RED);
         getImage().fill();
         
@@ -68,7 +68,7 @@ public class TimedButton extends Actor
         getImage().drawString("Don't Click!",35,60);
 
     }
-    public void changeButton(){
+    public void changeButton(){ // Green button, ready to be clicked
         getImage().setColor(Color.GREEN);
         getImage().fill();
         
@@ -78,7 +78,7 @@ public class TimedButton extends Actor
         getImage().drawString("Click!",70,60);
 
     }
-    public void finalButton(){
+    public void finalButton(){ // time displayed on button
         time = timeDiff();
         times.add(time);
         best = checkBest();
@@ -91,7 +91,7 @@ public class TimedButton extends Actor
         
         
     }
-    public void addTime(){
+    public void addTime(){ // for adding a time to the array
         times.add(time);
     }
     public void reset(){
