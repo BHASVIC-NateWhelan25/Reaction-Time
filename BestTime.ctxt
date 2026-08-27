@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=BestTime
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ bestTime\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=button
+comment1.target=BestTime(TimedButton)
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ bestTime\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ checkTimes()
+numComments=4
